@@ -39,7 +39,7 @@ def binSearch2(key, data):
 
     return data[low] == key
 
-data = [0, 0, 0, 0, 1, 1, 1, 2, 3, 4, 6, 7, 8, 9]
+data = [0, 0, 0, 0, 1, 1, 1, 2, 3, 4, 6,  7,  8,  9]
 index= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 print(binSearch2(9, data))
