@@ -27,7 +27,7 @@ def quickSort(data, lo, hi):
     quickSort(data, lo, mid - 1)
     quickSort(data, mid + 1, hi)
 
-data = [0, 0, 0, 9, 9, 9, 8, 4, 1, 3, 5, 2, 6, 7]
+data = [0, 0, 0,9, 9, 9, 8, 4, 1, 3, 5, 2, 6, 7]
 #data = [1, 1, 1, 1]
 
 quickSort(data, 0, len(data) - 1)
