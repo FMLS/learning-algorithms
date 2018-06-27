@@ -67,9 +67,54 @@ class SortBinTree(object):
         print(f'key: {node.key}  value: {node.value}  size: {node.n}') 
         self._preOrderPrint(node.right)
 
-    def preOrderPrint(self):
+    def preOrderPrintRe(self):
         print('前序遍历:')
         self._preOrderPrint(self.root)
+    
+    def preOrderPrint(self):
+        print('非递归前序遍历')
+        stack = []
+        stack.append(self.root)
+        while stack:
+            node = stack.pop()
+            print(node.value)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+    
+    def inOrderPrint(self):
+        print('非递归中序遍历')
+        stack = []
+        head = self.root
+
+        while stack or head != None:
+            #压左边界
+            if head != None:
+                stack.append(head)
+                head = head.left
+            else:
+                head = stack.pop()
+                print(head.value)
+                head = head.right
+    
+    def postOrderPrint(self):
+        print('非递归后续遍历')
+        stack1 = []
+        stack2 = []
+        stack1.append(self.root) 
+        #栈中有内容
+        while stack1:
+            node = stack1.pop()
+            stack2.append(node)
+            if node.left:
+                stack1.append(node.left)
+            if node.right:
+                stack1.append(node.right)
+        while stack2:
+            node = stack2.pop()
+            print(node.value)
+
     
     def _getHigth(self, node):
         if node == None:
@@ -136,8 +181,12 @@ class SortBinTree(object):
 if '__main__' == __name__:
 
     bin_tree = SortBinTree()
-    bin_tree.createFromList(random.sample(range(100), 50))
+    bin_tree.createFromList(random.sample(range(100), 10))
+    #bin_tree.preOrderPrintRe()
     bin_tree.preOrderPrint()
+    bin_tree.inOrderPrint()
+    bin_tree.postOrderPrint()
+    DrawTree().drawTree(bin_tree)
 
     print(f'tree hight: {bin_tree.hight}')
     print(f'tree size: {bin_tree.size}')

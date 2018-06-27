@@ -15,6 +15,7 @@ class SmallSum(object):
         while i <= mid and j <= high:
             if self.data[i] <= self.data[j]:
                 self.helper[h] = self.data[i]
+                #核心一行, 找右边比左边大的数有几个, 直接下标计算可得出
                 res += self.data[i] * (high - j + 1)
                 i += 1
             else:
