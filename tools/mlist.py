@@ -1,3 +1,8 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
 def printList(head):
     while head != None:
         print(head.value)
@@ -26,3 +31,13 @@ def reverseList2(head):
         if nn:
             nn = nn.next
     return pre
+
+def createSampleList(start, end):
+    head = Node(start)
+    p = head
+    for i in range(start + 1, end + 1):
+        p.next = Node(i)
+        p = p.next
+    return head
+
+
