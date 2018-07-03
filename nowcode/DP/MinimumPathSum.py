@@ -5,7 +5,7 @@ class MinimumPathSum:
         :rtype: int
         """
         return MinimumPathSum._getMinPathSum(grid, 0, 0)
-    
+    # 暴力递归解法 - 试法 
     @staticmethod
     def _getMinPathSum(grid, i, j):
         #reach the last grid
@@ -24,6 +24,22 @@ class MinimumPathSum:
                 MinimumPathSum._getMinPathSum(grid, i, j + 1)
             )
 
+    #动态规划 - 算法 
+    @staticmethod
+    def dpGetminPathSum(grid):
+        dp = [[None for i in range(len(grid[0]))] for i in range(len(grid))]
+        dp[-1][-1] = grid[-1][-1]
+        for j in range(len(grid[0]) - 2, -1, -1):
+            dp[-1][j] = grid[-1][j] + dp[-1][j + 1]
+        for i in range(len(grid) - 2, -1, -1):
+            dp[i][-1] = grid[i][-1] + dp[i + 1][-1]
+        
+        for i in range(len(grid) - 2, -1, -1):
+            for j in range(len(grid[0]) -2, -1, -1):
+                dp[i][j] = grid[i][j] + min(dp[i + 1][j], dp[i][j + 1])
+        
+        return dp[0][0]
+
 if __name__ == '__main__':
     grid = [
         [1,3,1],
@@ -31,5 +47,7 @@ if __name__ == '__main__':
         [4,2,1],
     ]
 
-    res = MinimumPathSum().minPathSum(grid)
+    #res = MinimumPathSum().minPathSum(grid)
+    #print(res)
+    res = MinimumPathSum().dpGetminPathSum(grid)
     print(res)
