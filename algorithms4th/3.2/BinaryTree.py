@@ -1,6 +1,6 @@
 import random
 
-from tools.draw import DrawTree
+from tools.draw import DrawTree, sampleDrawTree
 
 class Node(object):
     def __init__(self):
@@ -181,11 +181,12 @@ class SortBinTree(object):
 if '__main__' == __name__:
 
     bin_tree = SortBinTree()
-    bin_tree.createFromList(random.sample(range(100), 10))
+    bin_tree.createFromList(random.sample(range(1000), 50))
     #bin_tree.preOrderPrintRe()
     bin_tree.preOrderPrint()
     bin_tree.inOrderPrint()
     bin_tree.postOrderPrint()
+    sampleDrawTree(bin_tree.root)
     DrawTree().drawTree(bin_tree)
 
     print(f'tree hight: {bin_tree.hight}')

@@ -1,5 +1,15 @@
 import turtle
 
+def sampleDrawTree(root):
+    _printNodeInOrder(root, 0, 'H', 17)
+
+def _printNodeInOrder(head, height, to, len_):
+    if head is None:
+        return
+    _printNodeInOrder(head.right, height + 1, 'v', len_)
+    print(f'{" " * len_ * height}{to + str(head.value) + to:<17}')
+    _printNodeInOrder(head.left, height + 1, '^', len_)
+
 class DrawTree(object):
 
     def __init__(self):
