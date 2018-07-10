@@ -17,8 +17,8 @@ class maxPQ(object):
     def delMax(self):
         dmax = self.data[1]
         self.data[1], self.data[self.N] = self.data[self.N], self.data[1]
-        self.data[self.N] = None
         self.N -= 1
+        self.data[self.N + 1] = None
         self.sink(1)
         
         return dmax
@@ -43,15 +43,15 @@ class maxPQ(object):
             if (j < self.N and self.data[j] < self.data[j + 1]):
                 j += 1
             
-            if not self.data[j] < self.data[k]:
+            if not self.data[j] > self.data[k]:
                 break
             self.data[j], self.data[k] = self.data[k], self.data[j]
             
             k = j
-
+    
 if '__main__' == __name__:
     pq = maxPQ(10)
-    for i in range(100):
+    for i in range(100, 0, -1):
         pq.insert(i)
-    
-    print(pq.delMax())
+    for i in range(10):
+        print(pq.delMax())
