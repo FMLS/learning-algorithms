@@ -4,10 +4,11 @@ class heapSort:
     def __init__(self):
         pass
 
+    # 注意 python3中 负数的// 等价于 math.floor, 所以要用math.ceil达到负数的地板除效果
     def heapInsert(self, arr, index):
         while arr[index] > arr[math.ceil((index - 1) / 2)]:
-            arr[index], arr[index - 1] = arr[index - 1], arr[index]
-            index = (index - 1) // 2
+            arr[index], arr[math.ceil((index - 1)/2)] = arr[math.ceil((index - 1)/2)], arr[index]
+            index = math.ceil((index - 1) / 2)
         
 
     def sink(self, arr, k, heapSize):
@@ -27,6 +28,7 @@ class heapSort:
             return
         for i in range(0, len(arr)):
             self.heapInsert(arr, i)
+        print(arr)
         heapSize = len(arr)
         heapSize -= 1
         arr[0], arr[heapSize] = arr[heapSize], arr[0]
@@ -37,6 +39,7 @@ class heapSort:
             
 if __name__ == '__main__':
     data = [i for i in range(10, 0, -1)]
+    data = [i for i in range(0, 10, 1)]
     hpSort = heapSort()
     hpSort.Sort(data)
     print(data)

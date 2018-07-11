@@ -1,3 +1,4 @@
+import math
 #最普通的二分查找
 def binSearch(key, data):
     length = len(data)
@@ -22,7 +23,7 @@ def binSearch(key, data):
     return None
 
 #带重复元素的data中, 返回结果中最小的index
-def binSearch2(key, data):
+def binSearchFirst(key, data):
     length = len(data)
     low = 0
     high = length - 1
@@ -30,7 +31,7 @@ def binSearch2(key, data):
     #这里必须是 < 
     # <= 会导致low=high时进入死循环
     while low < high:
-        mid = low + (high - low) // 2
+        mid = low + (high - low) // 2 # 从左侧开始找, // 等价于math.floor
 
         if key > data[mid]:
             low = mid + 1
@@ -39,7 +40,23 @@ def binSearch2(key, data):
 
     return low if data[low] == key else None
 
+#带重复元素的data中, 返回结果中最大的index
+def binSearchLast(key, data):
+    length = len(data)
+    low = 0
+    high = length - 1
+    while low < high:
+        mid = math.ceil((low + high) / 2) # 从右侧开始找, 所以要用math.ceil把运算坐标像右靠
+        if key < data[mid]:
+            high = mid - 1
+        else:
+            low = mid
+    return low if data[low] == key else None
+
+
 data = [0, 0, 0, 0, 1, 1, 1, 2, 3, 4, 6,  7,  8,  9]
+data = [0, 1, 1, 1, 2, 3, 4, 6, 7, 8, 9]
 index= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
-print(binSearch2(1, data))
+print(binSearchFirst(1, data))
+print(binSearchLast(1, data))
