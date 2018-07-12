@@ -40,4 +40,12 @@ def createSampleList(start, end):
         p = p.next
     return head
 
-
+def createListFromArr(arr):
+    head = Node(arr[0])
+    p = head
+    for elem in arr[1:]:
+        node = Node(elem)
+        p.next = node
+        p = p.next
+    return head
+        

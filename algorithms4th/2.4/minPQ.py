@@ -12,6 +12,7 @@ class minPQ:
     def sink(self, k):
         while k * 2 <= self.N:
             j = k * 2
+            # j 小于 self.N 保证 j+1位置不为None
             if j < self.N and self.data[j] > self.data[j + 1]:
                 j += 1
             if not self.data[k] > self.data[j]:
