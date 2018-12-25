@@ -77,8 +77,8 @@ func main() {
 	lru.Put(2, 3)
 	lru.Put(4, 1)
 
-	fmt.Println(1)
-	fmt.Println(2)
+	fmt.Println(lru.Get(1))
+	fmt.Println(lru.Get(2))
 
 }
 
