@@ -50,6 +50,6 @@ class Solution(object):
 if __name__ == '__main__':
     tree = '[3,9,20,null,null,15,7]'
     root = deserialize(tree)
-    #drawtree(root)
+    drawtree(root)
     ans = Solution().levelOrder(root)
     print(ans)
