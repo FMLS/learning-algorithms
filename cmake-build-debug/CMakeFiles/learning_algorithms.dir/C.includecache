@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/liuyang/Project/self/learning-algorithms/leetcode/addTwoNumbers.c
+stdio.h
+-
+stdlib.h
+-
+
+/Users/liuyang/Project/self/learning-algorithms/leetcode/lengthOfLongestSubstring.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/Users/liuyang/Project/self/learning-algorithms/leetcode/merge.c
+stdio.h
+-
+stdlib.h
+-
+
