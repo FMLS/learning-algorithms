@@ -106,7 +106,7 @@ obj = Solution()
 res = obj.lengthOfLongestSubstring2(s)
 end_time = clock()
 use_time = end_time - start_time
-print res
-print s[res[0]:res[0] + res[1]]
-print 'time: ', use_time
+print (res)
+print (s[res[0]:res[0] + res[1]])
+print ('time: ', use_time)
 
