@@ -1,3 +1,5 @@
+package problems;
+
 public class EasyString {
 
     public static void PrcStr(String s) {

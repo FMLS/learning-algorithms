@@ -1,32 +1,33 @@
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
+package problems;
 
-/**
- * XOfAKindInADeckOfCards_914 Tester.
- *
- * @author <Authors name>
- * @since <pre>Feb 26, 2019</pre>
- * @version 1.0
- */
-public class XOfAKindInADeckOfCards_914Test {
+import java.util.HashMap;
 
-    @Before
-    public void before() throws Exception {
+public class XOfAKindInADeckOfCards_914 {
+
+    private int gcd(int a, int b) {
+        return b > 0 ? gcd(b, a % b) : a;
     }
 
-    @After
-    public void after() throws Exception {
+    public boolean hasGroupsSizeX(int[] deck) {
+        HashMap<Integer, Integer> h = new HashMap<>();
+        for (int i : deck) {
+            Integer res = h.get(i);
+            if (res != null) {
+                h.put(i, ++res);
+            } else {
+                h.put(i, 1);
+            }
+        }
+
+        int res = 0;
+        for (int item : h.values()) {
+            res = gcd(item, res);
+        }
+
+        return res > 1;
     }
 
-    /**
-     *
-     * Method: hasGroupsSizeX(int[] deck)
-     *
-     */
-    @Test
-    public void testHasGroupsSizeX() throws Exception {
-
+    public static void main(String[] args) {
         int[][] data = new int[][] {
                 {1,2,3,4,4,3,2,1},
                 {1,1,1,2,2,2,3,3},
@@ -43,7 +44,4 @@ public class XOfAKindInADeckOfCards_914Test {
             System.out.println(res);
         }
     }
-
-
-
-} 
+}

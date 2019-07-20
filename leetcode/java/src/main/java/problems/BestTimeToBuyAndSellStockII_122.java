@@ -1,3 +1,5 @@
+package problems;
+
 public class BestTimeToBuyAndSellStockII_122 {
     public int maxProfit(int[] prices) {
 
@@ -9,6 +11,13 @@ public class BestTimeToBuyAndSellStockII_122 {
         }
 
         return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] data = {7, 1, 5, 3, 6, 4};
+        BestTimeToBuyAndSellStockII_122 solution = new BestTimeToBuyAndSellStockII_122();
+        int res = solution.maxProfit(data);
+        System.out.println(res);
     }
 
 }

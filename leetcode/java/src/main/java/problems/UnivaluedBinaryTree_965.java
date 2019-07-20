@@ -1,9 +1,4 @@
-class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-}
+package problems;
 
 public class UnivaluedBinaryTree_965 {
     public boolean isUnivalTree(TreeNode root) {
