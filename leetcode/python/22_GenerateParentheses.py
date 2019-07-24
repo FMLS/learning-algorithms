@@ -23,7 +23,8 @@ class Solution:
         
         self.doGen(n - 1, sum_ + 1, str_ + '(')
         self.doGen(n - 1, sum_ - 1, str_ + ')')
-        
+
+
 if __name__ == '__main__':
     res = Solution().generateParenthesis(3)
     print(res)
