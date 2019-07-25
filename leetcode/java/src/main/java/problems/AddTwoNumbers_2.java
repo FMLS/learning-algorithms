@@ -1,5 +1,5 @@
 package problems;
-import java.util.List;
+import tools.ListTool;
 
 /*
 You are given two non-empty linked lists representing two non-negative integers.
@@ -81,33 +81,33 @@ public class AddTwoNumbers_2 {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = Tools.createListFromArray(new int[]{2, 4 ,3});
-        ListNode l2 = Tools.createListFromArray(new int[]{5, 6, 4});
+        ListNode l1 = ListTool.createListFromArray(new int[]{2, 4 ,3});
+        ListNode l2 = ListTool.createListFromArray(new int[]{5, 6, 4});
         ListNode head = (new AddTwoNumbers_2()).addTwoNumbers(l1, l2);
-        Tools.printList(head);
+        ListTool.printList(head);
 
 
-        l1 = Tools.createListFromArray(new int[]{5});
-        l2 = Tools.createListFromArray(new int[]{5});
+        l1 = ListTool.createListFromArray(new int[]{5});
+        l2 = ListTool.createListFromArray(new int[]{5});
         head = (new AddTwoNumbers_2()).addTwoNumbers(l1, l2);
-        Tools.printList(head);
+        ListTool.printList(head);
 
 
-        l1 = Tools.createListFromArray(new int[]{5});
-        l2 = Tools.createListFromArray(new int[]{0});
+        l1 = ListTool.createListFromArray(new int[]{5});
+        l2 = ListTool.createListFromArray(new int[]{0});
         head = (new AddTwoNumbers_2()).addTwoNumbers(l1, l2);
-        Tools.printList(head);
+        ListTool.printList(head);
 
 
-        l1 = Tools.createListFromArray(new int[]{9, 9, 9});
-        l2 = Tools.createListFromArray(new int[]{1});
+        l1 = ListTool.createListFromArray(new int[]{9, 9, 9});
+        l2 = ListTool.createListFromArray(new int[]{1});
         head = (new AddTwoNumbers_2()).addTwoNumbers(l1, l2);
-        Tools.printList(head);
+        ListTool.printList(head);
 
 
-        l1 = Tools.createListFromArray(new int[]{9, 9, 9});
-        l2 = Tools.createListFromArray(new int[]{9, 9, 9});
+        l1 = ListTool.createListFromArray(new int[]{9, 9, 9});
+        l2 = ListTool.createListFromArray(new int[]{9, 9, 9});
         head = (new AddTwoNumbers_2()).addTwoNumbers(l1, l2);
-        Tools.printList(head);
+        ListTool.printList(head);
     }
 }

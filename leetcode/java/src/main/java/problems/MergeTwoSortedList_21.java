@@ -1,6 +1,6 @@
 package problems;
 
-import javax.tools.Tool;
+import tools.ListTool;
 
 public class MergeTwoSortedList_21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -39,17 +39,17 @@ public class MergeTwoSortedList_21 {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = Tools.createListFromArray(new int[]{1, 2, 4});
-        ListNode l2 = Tools.createListFromArray(new int[]{1, 3, 4});
+        ListNode l1 = ListTool.createListFromArray(new int[]{1, 2, 4});
+        ListNode l2 = ListTool.createListFromArray(new int[]{1, 3, 4});
 
         ListNode newlist = (new MergeTwoSortedList_21()).mergeTwoLists(l1, l2);
-        Tools.printList(newlist);
+        ListTool.printList(newlist);
 
 
-        l1 = Tools.createListFromArray(new int[]{5});
-        l2 = Tools.createListFromArray(new int[]{1, 2, 4});
+        l1 = ListTool.createListFromArray(new int[]{5});
+        l2 = ListTool.createListFromArray(new int[]{1, 2, 4});
 
         newlist = (new MergeTwoSortedList_21()).mergeTwoLists(l1, l2);
-        Tools.printList(newlist);
+        ListTool.printList(newlist);
     }
 }

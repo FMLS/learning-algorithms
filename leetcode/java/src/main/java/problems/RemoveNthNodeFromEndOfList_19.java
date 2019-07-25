@@ -1,5 +1,7 @@
 package problems;
 
+import tools.ListTool;
+
 /**
  *
  Given a linked list, remove the n-th node from the end of list and return its head.
@@ -64,8 +66,8 @@ public class RemoveNthNodeFromEndOfList_19 {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = Tools.createListFromArray(new int[]{1, 2, 3, 4, 5});
+        ListNode l1 = ListTool.createListFromArray(new int[]{1, 2, 3, 4, 5});
         l1 = (new RemoveNthNodeFromEndOfList_19()).removeNthFromEnd(l1, 2);
-        Tools.printList(l1);
+        ListTool.printList(l1);
     }
 }

@@ -1,6 +1,8 @@
 package problems;
 
 
+import tools.ListTool;
+
 public class ReverseLinkedList_206 {
 
      public static ListNode reverseList(ListNode head) {
@@ -20,16 +22,16 @@ public class ReverseLinkedList_206 {
      }
 
      public static void main(String[] args) {
-         ListNode a = Tools.createListFromArray(new int[]{1, 2, 3, 4});
+         ListNode a = ListTool.createListFromArray(new int[]{1, 2, 3, 4});
          ListNode p = reverseList(a);
-         Tools.printList(p);
+         ListTool.printList(p);
 
-         a = Tools.createListFromArray(new int[]{1, 2});
+         a = ListTool.createListFromArray(new int[]{1, 2});
          p = reverseList(a);
-         Tools.printList(p);
+         ListTool.printList(p);
 
-         a = Tools.createListFromArray(new int[]{1});
+         a = ListTool.createListFromArray(new int[]{1});
          p = reverseList(a);
-         Tools.printList(p);
+         ListTool.printList(p);
      }
 }

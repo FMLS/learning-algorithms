@@ -1,9 +1,11 @@
-package problems;
+package tools;
+
+import problems.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tools {
+public class ListTool {
     public static ListNode createListFromArray(int[] nodes) {
         if (nodes.length == 0) {
             return null;
