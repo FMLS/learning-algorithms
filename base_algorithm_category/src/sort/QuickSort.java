@@ -39,6 +39,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] data = new int[] {0, 9, 4, 1, 3, 2, 7, 6, 8, 5};
+        data = new int[]{5, 9, 8, 7, 6, 4, 3, 2};
         (new QuickSort()).sort(data);
         for (int item : data) {
             System.out.print(item + " ");

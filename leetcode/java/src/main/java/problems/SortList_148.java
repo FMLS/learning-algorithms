@@ -71,6 +71,16 @@ public class SortList_148 {
         return l.next;
     }
 
+    public static ListNode getMidNode(ListNode lo, ListNode hi) {
+        ListNode slow = lo, fast = lo;
+        while (fast.next != hi && fast != hi) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
 //---------------------------------------------------------------------------------------------------------//
 
     // 标准答案, 自底向上迭代处理
@@ -109,17 +119,6 @@ public class SortList_148 {
 
         return dummy.next;
     }
-
-    public static ListNode getMidNode(ListNode lo, ListNode hi) {
-        ListNode slow = lo, fast = lo;
-        while (fast.next != hi && fast != hi) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-
-        return slow;
-    }
-
 
     public ListNode mySortList(ListNode head) {
         if (head == null || head.next == null) {
